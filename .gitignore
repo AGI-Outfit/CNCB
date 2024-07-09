@@ -1,0 +1,25 @@
+.idea/
+.vscode/
+**/__pycache__/
+output/*
+visual/visual_detect_gdinosam/VisualPromptSam.py
+visual/visual_detect_gdinosam/test_grounded_sam_twice.py GroundedSam
+visual/visual_detect_gdinosam/GroundedSam.py
+visual/visual_detect_gdinosam/Dinov2/*
+visual/visual_detect_gdinosam/GroundingDINO/*
+visual/visual_detect_gdinosam/segment_anything/*
+visual/visual_detect_gdinosam/FastSam/*
+visual/visual_detect_gdinosam/weights/*
+visual/visual_detect_gdinosam/output/*
+visual/visual_detect_gdinosam/material/*
+config/text2vec-base-chinese/*
+visual/calibration/calib_output/*
+visual/calibration/image/*
+act/weight/*
+main.py
+calib_sample.py
+*.mp4
+
+!.gitignore
+!act/detr/main.py
+

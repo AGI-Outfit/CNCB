@@ -1,0 +1,57 @@
+{
+  "base": {
+    "temperature": 0.0,
+    "model_name": "qwen1.5-chat",
+    "base_url": "http://172.16.11.125:5678/v1",
+    "api_key": "not empty",
+    "log_level": 4,
+    "debug_mode": false,
+    "retry_times": 5
+  },
+
+  "rag": {
+    "use_rag": true,
+    "model_path": "/home/jk/PycharmProjects/xinference/cnc_baseline/config/text2vec-base-chinese",
+    "docs": [
+      "机床工具切换，将当前工具切换到指定工具，先放下当前工具，然后切换成指定工具。",
+
+      "CNC下料，将指定物体精准放置到指定位置，一般一个完整的CNC下料过程：第一步检测目标位置，第二步移动机械臂末端到目标处，第三步使用吸盘吸取目标，第四步移动到原点，第五步打开门，第六步检测底座位置（注意检测底座位置时，要检测的底座类型与金属块类型是要对应的，金属块1号对应底座1号，金属块2号对应底座2号。），第七步机械臂末端移动到对应底座位置，第八步吸盘破真空以释放目标，最后一步移动到原点回归原处。"
+    ]
+  },
+
+  "prompt": {
+    "system": "必须调用我所提供的函数执行所要求的任务，不可以更改函数名，步骤尽可能详细。\n",
+    "example": "",
+    "user": "对以下任务进行规划： {input}\n必须使用我提供的函数，不要自己假设函数和参数。使用json输出格式列表做出使用函数的总结，不要分析过程，强制将未知的函数参数信息用\"\"替代。",
+    "input": "如何进行苹果的CNC下料？假设苹果的检测位置为[3, 2, 1]。"
+  },
+
+  "speechrecog": {
+    "use_speechrecog": true,
+    "model_name": "medium",
+    "wave_output_path": "output/speechrecog/",
+    "record_time": 5.0
+  },
+
+  "visual": {
+    "fragment": {
+      "fragment_read_from_json": false
+    },
+    "camera": {
+      "ip": "172.16.11.132",
+      "port": 8233,
+      "use_camera": true,
+      "inner_calib_path": "config/camera-calib/mtx-dist2024-05-31 22-16-35.json",
+      "outer_calib_path": "config/camera-calib/cam2end-2024-06-08 17-19-16.json"
+    }
+  },
+
+  "jkrobot": {
+    "ip": "172.16.11.132",
+    "port": 8001,
+    "adsport": 8234
+  }
+
+
+
+}
